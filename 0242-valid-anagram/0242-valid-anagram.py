@@ -5,6 +5,10 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
+        if sorted(s)==sorted(t):
+            return True
+        return False
+        
         # split, sort, join, the function
         
         def splitSortJoin(str):
