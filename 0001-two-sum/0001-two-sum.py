@@ -5,17 +5,14 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        def checkSum(curentIndex):
-            for index in range(len(nums)):
-                element = nums[index]
-                if index == curentIndex:
-                    continue
-                elif element + nums[curentIndex] == target:
-                        return index
-            return False
+        def checkSum(currentNumber, array):
+            for indx, elementLocal in enumerate(array):
+                if elementLocal+currentNumber == target:
+                    return indx
         
-        for index in range(len(nums)):
-            num = nums[index]
-            if checkSum(index)!= False:
-                return [index, checkSum(index)]
-            
+        for index, element in enumerate(nums):
+            result = checkSum(element,nums[index+1:])            
+            if result is not None:
+                return [index, result+index+1]
+
+    
