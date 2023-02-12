@@ -6,9 +6,9 @@ class Solution(object):
         :rtype: List[int]
         """
         def checkSum(currentNumber, array):
-            for indx, elementLocal in enumerate(array):
-                if elementLocal+currentNumber == target:
-                    return indx
+            for index, element in enumerate(array):
+                if element+currentNumber == target:
+                    return index
         
         for index, element in enumerate(nums):
             result = checkSum(element,nums[index+1:])            
